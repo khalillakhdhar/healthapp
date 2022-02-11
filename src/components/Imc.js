@@ -49,9 +49,9 @@ return(
     welcome
     <br/>
     <table>
-    <tr><td>poids:</td> <td><input type="number" onChange={(e)=> this.setState({poids:e.target.value})} value={this.state.poid}/></td></tr>
+    <tr><td>poids:</td> <td><input type="number" onChange={(e)=> this.setState({poids:e.target.value})} value={this.state.poids}/></td></tr>
         <tr><td>taille:</td> <td><input type="number" onChange={(e)=> this.setState({taille:e.target.value})} value={this.state.taille}/></td></tr>
-<tr><td><button onClick={this.evaluer()}> evaluer</button></td></tr>
+{this.evaluer()}
     </table>
 
     {this.calculer()}<br/>
