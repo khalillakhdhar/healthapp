@@ -2,10 +2,13 @@ import React from "react";
 class Imc extends React.Component
 {
     indice="";
+    state=Array;
+    
     remarque="";
     // eslint-disable-next-line no-useless-constructor
     constructor(props)
     {
+        
         super(props);
         this.state={poids:Number,taille:Number}
 
@@ -19,8 +22,9 @@ class Imc extends React.Component
         {
             this.remarque="maigre";
         }
-        else if(valeur<25)
+        else if(valeur<=25)
         this.remarque="idéale";
+
                 else
                 this.remarque="surpoids";
                 }
@@ -36,7 +40,7 @@ calculer()
 }
 else
 {
-this.indice= "";
+this.indice= 0;
 let valeurfinale=Math.round(parseFloat(this.indice));
 return valeurfinale;
 }
@@ -53,6 +57,7 @@ return(
         <tr><td>taille:</td> <td><input type="number" onChange={(e)=> this.setState({taille:e.target.value})} value={this.state.taille}/></td></tr>
 {this.evaluer()}
     </table>
+     
 
     {this.calculer()}<br/>
 {this.remarque}
